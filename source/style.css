@@ -12,3 +12,30 @@ body {
     -o-background-size: cover;
     background-size: cover;
 }
+
+.me {
+    width: 40%;
+    padding: 40px;
+    margin-left: 50px;
+    margin-top: 100px;
+    background-color: rgba(0,0,0, 0.7);
+    border-radius: 10px;
+}
+
+h1 {
+    font-size: 50px;
+}
+
+p {
+    font-size: 22px;
+}
+
+input {
+    border: 0;
+    padding: 10px;
+    font-size: 18px;
+}
+input[type="submit"] {
+    background: red;
+    color: white;
+}
