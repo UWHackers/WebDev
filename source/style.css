@@ -1,10 +1,14 @@
 body {
     text-align: center;
+    color: white;
+    font-family: helvetica;
     background: url("bg.jpg");
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    color: white;
-    font-family: helvetica;
 }
