@@ -1,7 +1,10 @@
-
 body {
-  text-align: center;
-  background: black;
-  color: white;
-  font-family: helvetica;
+    text-align: center;
+    background: url("bg.jpg");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    color: white;
+    font-family: helvetica;
 }
