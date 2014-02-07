@@ -1,0 +1,19 @@
+doctype html
+html(lang="en")
+	head
+		title My First
+	body
+		h1 My First JavaScript App
+		//div.data
+		form(method="post" action="/post")
+			p How much was the bill?
+			input#bill.data(type="text" name="billAmount" placeholder="bill")
+			p How many people?
+			input#people(type="text" name="people" placeholder="people")
+			br
+			//button#submit(type="submit") Submit
+			input(type="submit")
+			p#amount
+
+		script(src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js")		
+		script(src="/myfirst.js")
