@@ -1,0 +1,7 @@
+extends layout
+
+block content
+    h1= title
+    - each post in posts
+        a(href="/#{post.slug}")
+            p= post.title
