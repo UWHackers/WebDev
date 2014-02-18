@@ -8,7 +8,7 @@ Node.js
 
 ### More resources
 
-http://stackoverflow.com/questions/2353818/how-do-i-get-started-with-node-js
-http://code.tutsplus.com/tutorials/build-a-complete-mvc-website-with-expressjs--net-34168
-http://cwbuecheler.com/web/tutorials/2013/node-express-mongo/
-http://howtonode.org/getting-started-with-express
+- http://stackoverflow.com/questions/2353818/how-do-i-get-started-with-node-js
+- http://code.tutsplus.com/tutorials/build-a-complete-mvc-website-with-expressjs--net-34168
+- http://cwbuecheler.com/web/tutorials/2013/node-express-mongo/
+- http://howtonode.org/getting-started-with-express
