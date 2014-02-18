@@ -1,0 +1,15 @@
+express
+
+test the scaffolding
+remove unneccesary stuff
+add bodyParser
+connect to DB
+define the model - postSchema
+require in index - routes
+show all posts
+post route to insert new post
+make new template with form
+update index.jade
+
+add route to view each post
+add styling with bootstrap
