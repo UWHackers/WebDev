@@ -95,6 +95,20 @@
 				</section>
 
 				<section>
+					<h2>What can you do with node.js</h2>
+
+					<ul>
+						<li>JSON API's
+						<li>Single page apps
+						<li>Scalable web apps
+						<li>Interact with filesystems
+						<li>Data streaming
+						<li>Heavy computations
+						<li>General scripting
+					</ul>
+				</section>
+
+				<section>
 					<h2>Who uses node.js</h2>
 
 					<ul>
@@ -130,7 +144,7 @@ doSomethingUnrelated();
 					</code></pre>
 					<li><i>doSomethingUnrelated</i> is called immediately
 					<li><i>print(data)</i> will be called when done with reading
-					<li>Everything runs in parallel
+					<li>(Almost) everything runs in parallel - <a href="http://stackoverflow.com/questions/4631774/coordinating-parallel-execution-in-node-js">Almost</a>
 				</section>
 
 				<section>
@@ -230,15 +244,37 @@ node app.js
 					<ul>
 						<li><a href="http://www.zdnet.com/what-is-nosql-and-why-do-you-need-it-7000004989">NoSQL database</a>
 						<li>Well documented, huge community
-						<li>No rows, only documents - JSON objects
+						<li>Databases = Databases
+						<li>Collections = Tables
+						<li>Documents = Rows
 						<li>Nested documents
-						<li>Databases contain "Collections"
-						<li><a href="http://docs.mongodb.org/manual/installation/">Installation is easy</a>
 					</ul>
 
 					<aside class="notes">
 						<p>NoSQL = no sql. Many different approaches.
 					</aside>
+				</section>
+
+				<section>
+					<h2>A Document</h2>
+					<pre><code data-trim>
+{
+    _id: 1234,
+    author: { name: "Bob Davis", email : "bob@bob.com" },
+    date: { $date: "2010-07-12 13:23UTC" },
+    location: [ -121.2322, 42.1223222 ],
+    comments: [
+       { user: "jgs32@hotmail.com",
+         upVotes: 22,
+         downVotes: 14,
+         text: "Great point! I agree" },
+       { user: "holly.davidson@gmail.com",
+         upVotes: 421,
+         downVotes: 22,
+         text: "You are a moron" }
+    ]
+}
+						</code></pre>
 				</section>
 
 				<section>
