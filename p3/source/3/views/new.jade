@@ -1,0 +1,12 @@
+extends layout
+
+block content
+    form(method="post", action="/new")
+        p
+            input(type="text", name="post_title", placeholder="Enter the post title")
+        p
+            input(type="text", name="post_slug", placeholder="Enter the slug you want")
+        p
+            textarea(rows="10", cols="80", name="post_body")
+        p
+            input(type="submit", text="Submit")
