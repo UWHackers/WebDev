@@ -156,7 +156,7 @@
         </section>
 
         <section>
-          <h2>Who uses GRUNT</h2>
+          <h2>Who uses GRUNT?</h2>
 
           <ul>
             <li>Twitter
@@ -213,141 +213,93 @@ zip: {
         </section>
 
         <section>
-          <h2>Hello world</h2>
-          <pre><code data-trim>
-cd p3/source/1/
-node server.js
-          </code></pre>
+          <h1>Demo!</h1>
         </section>
 
         <section>
-          <h1>ExpressJS</h1>
+          <h1>Gulp</h1>
+          <h3>The hipster GRUNT</h3>
+          <img src="https://raw2.github.com/gulpjs/artwork/master/gulp-2x.png" alt="" style="background-color:transparent;border:none;box-shadow:none;">
+        </section>
+
+        <section>
+          <h2>What's wrong with GRUNT?</h2>
           <ul>
-            <li>Web application framework for node
-            <li>Inspired by Sinatra (ruby)
-            <li>Provides high-level API access to Node
-            <li><code>npm install -g express</code>
-          </ul>
-
-          <aside class="notes">Talk about -g - globally and problem when move project to different computer. Projects come with binary (CLI tool), and express has one.</aside>
-        </section>
-
-        <section>
-          <h2>Hello world in ExpressJS</h2>
-          <pre><code data-trim>
-var express = require('express');
-
-var app = express();
-
-app.get('/hello.txt', function(req, res){
-  res.send('Hello World');
-});
-
-app.listen(1337);
-console.log('Listening on port 1337');
-          </code></pre>
-        </section>
-
-        <section>
-          <h2>Connect Middleware</h2>
-          <ul>
-            <li>Middleware is basically a function which accepts <code>request</code> and <code>response</code> objects and a <code>next</code> function.
-            <li><i><a href="http://www.senchalabs.org/connect/">Connect</a></i> is the heart of Express
+            <li>It's really slow (up to 20 seconds per build for me)</li>
+            <li>It's ugly</li>
+            <li>It's hard to learn</li>
           </ul>
         </section>
 
         <section>
-          <h2><code>express --help</code></h2>
-          <pre>
-  Usage: express [options] [dir]
-
-  Options:
-
-    -h, --help          output usage information
-    -V, --version       output the version number
-    -s, --sessions      add session support
-    -e, --ejs           add ejs engine support (defaults to jade)
-    -J, --jshtml        add jshtml engine support (defaults to jade)
-    -H, --hogan         add hogan.js engine support
-    -c, --css <engine>  add stylesheet <engine> support (less|stylus) (defaults to plain css)
-    -f, --force         force on non-empty directory
-          </pre>
-
-          <pre>
-express -s
-(cd p3/source/2)
-npm install
-node app.js
-          </pre>
-
-          <aside class="notes">Express CLI provides scaffolding. Provides sessions, CSS, templating etc. Walkthrough the project stub in 2-annotated.</aside>
-        </section>
-
-        <section>
-          <h2>MongoDB</h2>
-
+          <h2>What's right with Gulp?</h2>
           <ul>
-            <li><a href="http://www.zdnet.com/what-is-nosql-and-why-do-you-need-it-7000004989">NoSQL database</a>
-            <li>Well documented, huge community
-            <li>Databases = Databases
-            <li>Collections = Tables
-            <li>Documents = Rows
-            <li>Nested documents
+            <li>It's blazing fast</li>
+            <li>It uses Node streams to parallelize work</li>
+            <li>It's beautiful</li>
+            <li>It's easy to learn</li>
           </ul>
-
-          <aside class="notes">
-            <p>NoSQL = no sql. Many different approaches.
-          </aside>
+          <br>
+          <br>
+          <h3>= It's hipster</h3>
         </section>
 
         <section>
-          <h2>A Document</h2>
-          <pre><code data-trim>
-{
-    _id: 1234,
-    author: { name: "Bob Davis", email : "bob@bob.com" },
-    date: { $date: "2010-07-12 13:23UTC" },
-    location: [ -121.2322, 42.1223222 ],
-    comments: [
-       { user: "jgs32@hotmail.com",
-         upVotes: 22,
-         downVotes: 14,
-         text: "Great point! I agree" },
-       { user: "holly.davidson@gmail.com",
-         upVotes: 421,
-         downVotes: 22,
-         text: "You are a moron" }
-    ]
-}
-            </code></pre>
+          <h1>Demo!</h1>
         </section>
 
         <section>
-          <h2>Quickstart</h2>
+          <h3>How do you share your <em>awesome</em> website to the world?</h3>
+        </section>
 
-          <pre><code data-trim>
-mongod   // start the mongo server
-mongo   // start the CLI
-help   // show help contents
-          </code></pre>
-
-          <pre><code data-trim>
-show collections
-use newdb   // make the DB on the fly
-show collections   // show the collections in the DB
-db.collection1.save({1: 'a', 2: 'b'});
-db.collection1.find();   // return all documents
-db.collection1.find({1: 'a'});   // search for documents
-          </code></pre>
+        <section data-background="rgb(70, 67, 104)">
+          <h1>Heroku</h1>
+          <img src="http://www.touchinspiration.com/assets/heroku-logo-af8c8b034b4ba443a627b2905fc71a86.png" alt="">
         </section>
 
         <section>
-          <h2>Mongoose</h2>
+          <h3>Why use it?</h3>
+          <ul>
+            <li>Tons of tools
+            <li>Supports most languages
+            <li>Works perfectly with git
+            <li>1 line deploy
+            <li>Very scalable
+          </ul>
+          <br>
+          <br>
+          <h3>= It's hipster</h3>
+        </section>
+
+        <section>
+          <h2>Who uses Heroku?</h2>
 
           <ul>
-            <li>Mongoose extends native drivers to Node.js
-            <li>Define your own schema (models)
-            <li><pre>npm install mongoose</pre>
+            <li>Github
+            <li>Facebook
+            <li>Code For America
+            <li>Mail Chimp
+            <li>TED
+            <li>And a TON of startups
+          </ul>
+        </section>
+
+        <section>
+          <h2>How to use?</h2>
+          <code>git push heroku master</code>
+        </section>
+
+        <section>
+          <h2>Add-ons</h2>
+          <h4>Heroku's killer feature</h4>
+          <ul>
+            <li>Caching
+            <li>Email
+            <li>DNS
+            <li>Data storage
+            <li>Performance monitoring
+            <li>Custom domains
+            <li>...most of them are <em>free</em>
           </ul>
         </section>
 
@@ -367,23 +319,27 @@ db.collection1.find({1: 'a'});   // search for documents
         <section>
           <h2>What next</h2>
           <ul>
-            <li><a href="http://mean.io">MEAN stack</a>
+            <li><a href="http://socket.io">Socket.io</a>
             <li>Node is hard, but very fun
             <li>Practice, a lot!
           </ul>
         </section>
 
         <section>
+          <blockquote>Debugging is twice as hard as writing the code in the first place. Therefore, if you write the code as cleverly as possible, you are, by definition, not smart enough to debug it.</blockquote>
+          <p> - Brian W. Kernighan</p>
+        </section>
+
+        <section>
           <h2>Resources</h2>
-          <li>http://stackoverflow.com/questions/2353818/how-do-i-get-started-with-node-js
-          <li>http://code.tutsplus.com/tutorials/build-a-complete-mvc-website-with-expressjs--net-34168
-          <li>http://cwbuecheler.com/web/tutorials/2013/node-express-mongo/
-          <li>http://howtonode.org/getting-started-with-express
+          <li>http://hipsterdevstack.tumblr.com/
+          <li>http://gulpjs.com/
+          <li>http://heroku.com/
         </section>
 
         <section>
           <h1>That is all.</h1>
-          <p>@TheKaranGoel</p>
+          <p>@GrantTimmerman</p>
           <p>Questions?</p>
         </section>
 
