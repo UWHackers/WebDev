@@ -190,41 +190,26 @@ grunt.initConfig({
   }
 })
           </code></pre>
-          <li>Everything is blocked
-          <li>CPU cycles are wasted
         </section>
 
         <section>
-          <h2><i>A</i>synchronous code</h2>
+          <h2>Example</h2>
           <pre><code data-trim>
-readFromDatabase({
-  print(data);
+zip: {
+  'reveal-js-presentation.zip': [
+    'index.html',
+    'css/**',
+    'js/**',
+    'lib/**',
+    'images/**',
+    'plugin/**'
+  ]
 }
-doSomethingUnrelated();
           </code></pre>
-          <li><i>doSomethingUnrelated</i> is called immediately
-          <li><i>print(data)</i> will be called when done with reading
-          <li>(Almost) everything runs in parallel - <a href="http://stackoverflow.com/questions/4631774/coordinating-parallel-execution-in-node-js">Almost</a>
-        </section>
-
-        <section>
-          <h2>What Node isn't</h2>
-          <ul>
-            <li>Full stack web framework
-            <li>MVC framework
-            <li>Pre-bundled with Database
-          </ul>
-        </section>
-
-        <section>
-          <h2>Event loop</h2>
-          <ul>
-            <li>Code runs in an "event loop"
-            <li>Stops only when no event listeners found
-          </ul>
-          <aside class="notes">
-            Explain with the weird hand movement. Wait for the request, do something. Repeat.
-          </aside>
+          <li>Every time you save, generate a zip
+          <br>
+          <br>
+          <h3><em>It's that easy</em></h3>
         </section>
 
         <section>
