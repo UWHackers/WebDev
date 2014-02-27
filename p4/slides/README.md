@@ -1,6 +1,6 @@
-# Slides from talk on node.js.
+# Slides from talk on grunt, gulp and heroku.
 
-### Karan Goel, 02.20.2014
+### Grant Timmerman, 02.27.2014
 
 All of this week's session was done using open source software.
 
