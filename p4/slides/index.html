@@ -1,0 +1,443 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>Gulp, Heroku + More! - Sudo Soldiers</title>
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="css/reveal.min.css">
+    <link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+    <!-- For syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+    <script>
+      document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="reveal">
+
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+        <section>
+          <h1>Hacking like a Hipster</h1>
+          <h3>Gulp, Heroku + more</h3>
+          <p>
+            <small>Sudo Soldiers <br> 02.27.2014</small>
+          </p>
+        </section>
+
+        <section>
+          <h2>Hey there, I’m Grant.</h2>
+          <p>
+            <ul>
+              <li>CS, UW
+              <li>Open web evangelist
+              <li>@GrantTimmerman
+            </ul>
+          </p>
+
+          <aside class="notes">
+            Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
+          </aside>
+        </section>
+
+        <!-- Example of nested vertical slides -->
+        <section>
+          <h2>Sudo Soldiers</h2>
+          <ul>
+            <li>https://www.facebook.com/groups/uwhackers/
+            <li>https://github.com/SudoSoldiers/
+            <li>http://students.washington.edu/uwsudo/
+            <li>uwsudo@uw.edu
+          </ul>
+        </section>
+
+        <section>
+          <h1>On the menu</h1>
+          <ul>
+            <li>Grunt
+            <li>Gulp
+            <li>Heroku
+            <li>Create a website from scratch and show it to the world!
+          </ul>
+        </section>
+
+        <section>
+          <h2>So, who's a hipster?</h2>
+          <img src="http://technologyuninhibited.files.wordpress.com/2012/04/hipster-glasses21.jpg" alt="">
+          <blockquote>"Hipsters are a subculture of men and women typically in their 20's and 30's that value independent thinking, counter-culture, progressive politics, an appreciation of art and indie-rock, creativity, intelligence, and witty banter."</blockquote>
+          <aside class="notes">
+            <li>Everything is asynchronous, don’t have to wait for slow IO or DB ops.
+            <li>All the libraries built for Node use non-blocking I/O. This is a really cool feature, which allows the single thread in Node to serve thousands of request per second. It even lets you run multiple servers in the same thread.
+          </aside>
+        </section>
+
+        <section>
+          <h2>Who's a hipster hacker?</h2>
+
+          <blockquote>"A hacker who uses artisanal development tools that we used to like before they went mainstream"</blockquote>
+          <br>
+          <h4>We use languages and frameworks like</h4>
+          <ul>
+            <li>Node
+            <li>Go
+            <li>Scala
+            <li>Julia
+            <li>Haskell
+            <li>Gulp
+            <li>Coffeescript
+            <li>Bower Yeoman Grunt
+          </ul>
+        </section>
+
+        <section>
+          <h2>A True Hipster</h2>
+          <div style="text-align:center;display:inline-block;overflow: hidden;height: 100%;width:500px;">
+            <blockquote class="twitter-tweet" lang="en"><p>I already built Atom as an Emacs extension in 1994.</p>&mdash; Hipster Hacker (@hipsterhacker) <a href="https://twitter.com/hipsterhacker/statuses/438790074348482560">February 26, 2014</a></blockquote>
+            <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+          </div>
+        </section>
+
+        <section>
+          <h1>Let's dive in!</h1>
+        </section>
+
+        <section>
+          <h2>So you've heard of <q>build systems</q>.</h2>
+          <h3>like Grunt, Make, and Gulp</h3>
+          <br>
+          <p>But what are they?</p>
+          <p>And what can they do?</p>
+        </section>
+
+        <section>
+          <h2>Build systems <em>automate</em> common tasks</h2>
+          <ul>
+            <li>compiling computer source code into binary code
+            <li>packaging binary code
+            <li>running tests
+            <li>deployment to production systems
+            <li>creating documentation and/or release notes
+          </ul>
+        </section>
+
+        <section>
+          <h1>Introducting GRUNT</h1>
+          <h2>The Javascript TaskRunner</h2>
+        </section>
+
+        <section>
+          <h2>It automates things you do already</h2>
+          <h4>like...</h4>
+          <ul>
+            <li>coffeescript
+            <li>handlebars
+            <li>jade
+            <li>Sass
+            <li>JSHint
+            <li>Require.js
+            <li>And much much more
+          </ul>
+        </section>
+
+        <section>
+          <h2>Who uses GRUNT</h2>
+
+          <ul>
+            <li>Twitter
+            <li>jQuery
+            <li>Adobe
+            <li>Modernizr
+            <li>A TON of startups
+          </ul>
+          <p></p>
+          <p><a href="http://gruntjs.com/who-uses-grunt">Projects, Applications, and Companies Using GRUNT</a></p>
+        </section>
+
+        <section>
+          <h2>What it looks like</h2>
+          <p>Gruntfile.js</p>
+          <pre><code data-trim>
+grunt.initConfig({
+  uglify: {
+    build: {
+      src: 'js/reveal.js',
+      dest: 'js/reveal.min.js'
+    }
+  },
+
+  cssmin: {
+    compress: {
+      files: {
+        'css/reveal.min.css': [ 'css/reveal.css' ]
+      }
+    }
+  }
+})
+          </code></pre>
+          <li>Everything is blocked
+          <li>CPU cycles are wasted
+        </section>
+
+        <section>
+          <h2><i>A</i>synchronous code</h2>
+          <pre><code data-trim>
+readFromDatabase({
+  print(data);
+}
+doSomethingUnrelated();
+          </code></pre>
+          <li><i>doSomethingUnrelated</i> is called immediately
+          <li><i>print(data)</i> will be called when done with reading
+          <li>(Almost) everything runs in parallel - <a href="http://stackoverflow.com/questions/4631774/coordinating-parallel-execution-in-node-js">Almost</a>
+        </section>
+
+        <section>
+          <h2>What Node isn't</h2>
+          <ul>
+            <li>Full stack web framework
+            <li>MVC framework
+            <li>Pre-bundled with Database
+          </ul>
+        </section>
+
+        <section>
+          <h2>Event loop</h2>
+          <ul>
+            <li>Code runs in an "event loop"
+            <li>Stops only when no event listeners found
+          </ul>
+          <aside class="notes">
+            Explain with the weird hand movement. Wait for the request, do something. Repeat.
+          </aside>
+        </section>
+
+        <section>
+          <h2>Hello world</h2>
+          <pre><code data-trim>
+cd p3/source/1/
+node server.js
+          </code></pre>
+        </section>
+
+        <section>
+          <h1>ExpressJS</h1>
+          <ul>
+            <li>Web application framework for node
+            <li>Inspired by Sinatra (ruby)
+            <li>Provides high-level API access to Node
+            <li><code>npm install -g express</code>
+          </ul>
+
+          <aside class="notes">Talk about -g - globally and problem when move project to different computer. Projects come with binary (CLI tool), and express has one.</aside>
+        </section>
+
+        <section>
+          <h2>Hello world in ExpressJS</h2>
+          <pre><code data-trim>
+var express = require('express');
+
+var app = express();
+
+app.get('/hello.txt', function(req, res){
+  res.send('Hello World');
+});
+
+app.listen(1337);
+console.log('Listening on port 1337');
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Connect Middleware</h2>
+          <ul>
+            <li>Middleware is basically a function which accepts <code>request</code> and <code>response</code> objects and a <code>next</code> function.
+            <li><i><a href="http://www.senchalabs.org/connect/">Connect</a></i> is the heart of Express
+          </ul>
+        </section>
+
+        <section>
+          <h2><code>express --help</code></h2>
+          <pre>
+  Usage: express [options] [dir]
+
+  Options:
+
+    -h, --help          output usage information
+    -V, --version       output the version number
+    -s, --sessions      add session support
+    -e, --ejs           add ejs engine support (defaults to jade)
+    -J, --jshtml        add jshtml engine support (defaults to jade)
+    -H, --hogan         add hogan.js engine support
+    -c, --css <engine>  add stylesheet <engine> support (less|stylus) (defaults to plain css)
+    -f, --force         force on non-empty directory
+          </pre>
+
+          <pre>
+express -s
+(cd p3/source/2)
+npm install
+node app.js
+          </pre>
+
+          <aside class="notes">Express CLI provides scaffolding. Provides sessions, CSS, templating etc. Walkthrough the project stub in 2-annotated.</aside>
+        </section>
+
+        <section>
+          <h2>MongoDB</h2>
+
+          <ul>
+            <li><a href="http://www.zdnet.com/what-is-nosql-and-why-do-you-need-it-7000004989">NoSQL database</a>
+            <li>Well documented, huge community
+            <li>Databases = Databases
+            <li>Collections = Tables
+            <li>Documents = Rows
+            <li>Nested documents
+          </ul>
+
+          <aside class="notes">
+            <p>NoSQL = no sql. Many different approaches.
+          </aside>
+        </section>
+
+        <section>
+          <h2>A Document</h2>
+          <pre><code data-trim>
+{
+    _id: 1234,
+    author: { name: "Bob Davis", email : "bob@bob.com" },
+    date: { $date: "2010-07-12 13:23UTC" },
+    location: [ -121.2322, 42.1223222 ],
+    comments: [
+       { user: "jgs32@hotmail.com",
+         upVotes: 22,
+         downVotes: 14,
+         text: "Great point! I agree" },
+       { user: "holly.davidson@gmail.com",
+         upVotes: 421,
+         downVotes: 22,
+         text: "You are a moron" }
+    ]
+}
+            </code></pre>
+        </section>
+
+        <section>
+          <h2>Quickstart</h2>
+
+          <pre><code data-trim>
+mongod   // start the mongo server
+mongo   // start the CLI
+help   // show help contents
+          </code></pre>
+
+          <pre><code data-trim>
+show collections
+use newdb   // make the DB on the fly
+show collections   // show the collections in the DB
+db.collection1.save({1: 'a', 2: 'b'});
+db.collection1.find();   // return all documents
+db.collection1.find({1: 'a'});   // search for documents
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Mongoose</h2>
+
+          <ul>
+            <li>Mongoose extends native drivers to Node.js
+            <li>Define your own schema (models)
+            <li><pre>npm install mongoose</pre>
+          </ul>
+        </section>
+
+        <section data-background="#007777">
+          <h1>Ok so let's make something</h1>
+        </section>
+
+        <section data-background="#007777">
+          <h2>Blog</h2>
+
+          <p>List all posts</p>
+          <p>View individual posts</p>
+          <p>Add a post</p>
+          <p>Commenting?</p>
+        </section>
+
+        <section>
+          <h2>What next</h2>
+          <ul>
+            <li><a href="http://mean.io">MEAN stack</a>
+            <li>Node is hard, but very fun
+            <li>Practice, a lot!
+          </ul>
+        </section>
+
+        <section>
+          <h2>Resources</h2>
+          <li>http://stackoverflow.com/questions/2353818/how-do-i-get-started-with-node-js
+          <li>http://code.tutsplus.com/tutorials/build-a-complete-mvc-website-with-expressjs--net-34168
+          <li>http://cwbuecheler.com/web/tutorials/2013/node-express-mongo/
+          <li>http://howtonode.org/getting-started-with-express
+        </section>
+
+        <section>
+          <h1>That is all.</h1>
+          <p>@TheKaranGoel</p>
+          <p>Questions?</p>
+        </section>
+
+      </div>
+
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.min.js"></script>
+
+    <script>
+
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+        transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+        // Parallax scrolling
+        // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+        // parallaxBackgroundSize: '2100px 900px',
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+          { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+        ]
+      });
+
+    </script>
+
+  </body>
+</html>
