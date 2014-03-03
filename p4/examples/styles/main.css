@@ -1,0 +1,27 @@
+body {
+  padding-top: 50px; }
+
+.starter-template {
+  padding: 40px 15px;
+  text-align: center; }
+
+img {
+  width: 800px; }
+
+blockquote {
+  color: #9a9a9a;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  border: none;
+  quotes: "\201C" "\201D" "\2018" "\2019"; }
+
+blockquote:before {
+  color: #ccc;
+  content: open-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em; }
+
+blockquote p {
+  display: inline; }
