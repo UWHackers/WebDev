@@ -8,3 +8,5 @@ WebDev
 All presentations + source code from our web dev lectures. Check readme within each folder to learn more.
 
 http://students.washington.edu/uwsudo/
+
+See http://sudosoldiers.github.io/ for live presentations.
